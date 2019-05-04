@@ -1,15 +1,15 @@
-namespace ba_timetracker.models.transactions
+namespace ba_academy.models.transactions
 
-import ba_timetracker.models.participants.ParticipantEmployee
-import ba_timetracker.models.assets.Task
+import ba_academy.models.participants.ParticipantAbstract
+import ba_academy.models.assets.*
 
 transaction TransactionWork {
-  --> ParticipantEmployee employee
+  --> ParticipantAbstract someParticipent
   --> Task task
 }
 
 transaction TransactionTrackTime {
-  --> ParticipantEmployee employee
+  --> ParticipantAbstract someParticipent
   o DateTime spentOn
   o Long duration
   o String comment
@@ -18,3 +18,52 @@ transaction TransactionTrackTime {
 event timeEntryCreated {
   o String detail
 }
+//TRANSACTIONS
+transaction AddParticipantTeacher{
+  --> ParticipantAbstract someParticipent
+  o String participantId
+}
+
+transaction AddParticipantStudent{
+  --> ParticipantAbstract someParticipent
+  o String participantId
+}
+
+transaction AddSubject {
+  o String name
+  o SubjectCodes code
+  o String detail
+}
+
+transaction AddStudentsToSubject {
+  o String nameSubject
+  o SubjectCodes code
+  o String[] studentIds
+  o String detail
+}
+
+transaction AddStudentsToTeacher {
+  o String nameSubject
+  o SubjectCodes code
+  o String[] teacherIds
+  o String detail
+}
+
+transaction TransferMarks {
+  o String name
+  o SubjectCodes code
+  o String detail
+}
+
+//EVENTS
+event AddedTeacher {
+  --> ParticipantAbstract someParticipent
+  o String teacherId
+  o String detail
+}
+ 
+event AddedStudent {
+  --> ParticipantAbstract someParticipent
+  o String studentId
+  o String detail
+} 

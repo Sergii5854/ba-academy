@@ -1,20 +1,13 @@
-namespace ba_timetracker.models.assets
+namespace ba_academy.models.assets
 
-import ba_timetracker.models.participants.ParticipantEmployee
+import ba_academy.models.participants.ParticipantAbstract
 
 asset Task identified by id {
   o String id
-  o StateType state
   o String description
   o String comment
   o DateTime timeStart
   o Integer minutes
-}
-
-enum StateType {
-  o BAG
-  o FIX
-  o TEST
 }
 
 asset AssetTimeEntry identified by timeEntryId {
@@ -22,5 +15,14 @@ asset AssetTimeEntry identified by timeEntryId {
   o DateTime spentOn
   o Long duration
   o String comment
-  --> ParticipantEmployee employee
+  --> ParticipantAbstract someParticipent
+}
+
+enum SubjectCodes { 
+  o LITERATURE 
+  o MATH
+  o PHYSICS
+  o ENG 
+  o BLOCKCHAIN 
+  o STATISTICS
 }

@@ -17,24 +17,24 @@
  */
 rule EverybodyCanReadEverything {
     description: "Allow all participants read access to all resources"
-    participant: "ba_timetracker.models.participants.ParticipantEmployee"
+    participant: "ba_academy.models.participants.ParticipantAbstract"
     operation: READ
-    resource: "ba_timetracker.**"
+    resource: "ba_academy.**"
     action: ALLOW
 }
 
 rule EverybodyCanTrackTime {
     description: "Allow all participants to track time"
-    participant: "ba_timetracker.models.participants.ParticipantEmployee"
+    participant: "ba_academy.models.participants.ParticipantAbstract"
     operation: CREATE
-    resource: "ba_timetracker.models.assets.*"
+    resource: "ba_academy.models.assets.*"
     action: ALLOW
 }
 rule EverybodyCanSubmitTransaction{
     description: "Allow all participants to track time"
-    participant: "ba_timetracker.models.participants.ParticipantEmployee"
+    participant: "ba_academy.models.participants.ParticipantAbstract"
     operation: CREATE
-    resource: "ba_timetracker.models.transactions.*"
+    resource: "ba_academy.models.transactions.*"
     action: ALLOW
 }
 
@@ -66,6 +66,6 @@ rule NetworkAdminRead {
     description: "Grant business network administrators full access to user resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
     operation: READ
-    resource: "ba_timetracker.**"
+    resource: "ba_academy.**"
     action: ALLOW
 }

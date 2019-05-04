@@ -2,11 +2,11 @@
   "engines": {
     "composer": "^0.20.8"
   },
-  "name": "ba_timetracker",
-  "version": "0.0.8",
-  "description": "BNA timetracker",
+  "name": "ba_academy",
+  "version": "0.0.1",
+  "description": "BA academy ",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/ba_timetracker.bna",
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/ba_academy.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"
@@ -15,8 +15,8 @@
     "composer",
     "composer-network"
   ],
-  "author": "vcoolish",
-  "email": "kulishviacheslav@gmail.com",
+  "author": "Blockchain Academy",
+  "email": "sergiib@titanium-labs.com",
   "license": "Apache-2.0",
   "devDependencies": {
     "composer-admin": "^0.20.8",
