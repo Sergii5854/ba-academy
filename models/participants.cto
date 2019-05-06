@@ -4,16 +4,16 @@ abstract participant ParticipantAbstract identified by id {
   o String           id
   o ParticipantsInfo info
 }
-// Mark: ParticipantInfo
-concept ParticipantsInfo {
+
+concept ParticipantInfo {
   o String firstName
   o String midlName
   o String lastName
   o String email
 }
-// Mark: SystemAdmininstrator
-participant SysAdmin extends ParticipantAbstract {
-  
+
+participant SystemAdmininstrator extends ParticipantAbstract {
+
 }
 
 participant Manager extends ParticipantAbstract {
@@ -26,6 +26,6 @@ participant Teacher extends ParticipantAbstract {
 
 participant Student extends ParticipantAbstract {
   o String[]   subjects
-  o String[]   attendens
+  o String[]   attendant
   o Integer[]  marks
 }
