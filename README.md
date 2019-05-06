@@ -5,12 +5,9 @@ key words:
     Hyperledger, Composer, Fabric 
 
 ## Vocabulary:
-// TODO create Vocabulary
-```
-
-Blockchain 
-
-```
+[Vocabulary](docs/Vocabulary.md)
+[Upgrade network](docs/howToUpgradeNetwork.md)
+ 
 #### Motivation / Reason : 
 // TODO added more description 
 ```
