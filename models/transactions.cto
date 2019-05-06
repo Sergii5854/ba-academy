@@ -16,7 +16,7 @@ transaction AddSubject {
   o String                name
   o SubjectCodes          code
   o String                detail
-  --> ParticipantTeacher  teacher 
+  --> Teacher  teacher
   o String[]              studentIds
 }
 
@@ -25,34 +25,34 @@ transaction UpdateSubject {
   o String               name
   o SubjectCodes         code
   o String               detail
-  --> ParticipantTeacher teacher
+  --> Teacher teacher
   o String[]             studentIds
 }
 
 transaction TransferMarks {
-  --> ParticipantStudent student
+  --> Student student
   --> Subject            subject
   o Integer              amount
 }
 
 transaction MintMarks {
   --> Subject             subject
-  --> ParticipantStudent  student
+  --> Student  student
   o Integer               amount
 }
 
 //EVENTS
 event MarksMinted {
   --> Subject             subject
-  --> ParticipantStudent  student
+  --> Student  student
   o Integer               amount
 }
- 
+
 event MarksTransfered {
-  --> ParticipantStudent student
+  --> Student student
   --> Subject            subject
   o Integer              amount
-} 
+}
 
 event subjectAttended {
   --> ParticipantAbstract someParticipent

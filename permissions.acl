@@ -75,8 +75,8 @@ rule NetworkAdminRead {
 
 rule OnlyManagerCanCreateParticipant {
     description: "Grant business network Manager  access to create Participant "
-    participant: "ba_academy.models.participants.ParticipantAbstract"
-    operation: ALL
-    resource: "ba_academy.**"
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.participants.ParticipantAbstract"
     action: ALLOW
 }
