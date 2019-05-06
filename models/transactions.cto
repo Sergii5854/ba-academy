@@ -3,67 +3,60 @@ namespace ba_academy.models.transactions
 import ba_academy.models.participants.ParticipantAbstract
 import ba_academy.models.assets.*
 
-transaction TransactionWork {
+transaction TransactionTrackAttendance {
   --> ParticipantAbstract someParticipent
-  --> Task task
+  --> Subject             subject
+  o   DateTime            spentOn
+  o   Long                duration
 }
 
-transaction TransactionTrackTime {
-  --> ParticipantAbstract someParticipent
-  o DateTime spentOn
-  o Long duration
-  o String comment
-}
-
-event timeEntryCreated {
-  o String detail
-}
-//TRANSACTIONS
-transaction AddParticipantTeacher{
-  --> ParticipantAbstract someParticipent
-  o String participantId
-}
-
-transaction AddParticipantStudent{
-  --> ParticipantAbstract someParticipent
-  o String participantId
-}
+// Manager is free to add participants with any fields now
 
 transaction AddSubject {
-  o String name
-  o SubjectCodes code
-  o String detail
+  o String                name
+  o SubjectCodes          code
+  o String                detail
+  --> ParticipantTeacher  teacher 
+  o String[]              studentIds
 }
 
-transaction AddStudentsToSubject {
-  o String nameSubject
-  o SubjectCodes code
-  o String[] studentIds
-  o String detail
-}
-
-transaction AddStudentsToTeacher {
-  o String nameSubject
-  o SubjectCodes code
-  o String[] teacherIds
-  o String detail
+transaction UpdateSubject {
+--> Subject              subject
+  o String               name
+  o SubjectCodes         code
+  o String               detail
+  --> ParticipantTeacher teacher
+  o String[]             studentIds
 }
 
 transaction TransferMarks {
-  o String name
-  o SubjectCodes code
-  o String detail
+  --> ParticipantStudent student
+  --> Subject            subject
+  o Integer              amount
+}
+
+transaction MintMarks {
+  --> Subject             subject
+  --> ParticipantStudent  student
+  o Integer               amount
 }
 
 //EVENTS
-event AddedTeacher {
-  --> ParticipantAbstract someParticipent
-  o String teacherId
-  o String detail
+event MarksMinted {
+  --> Subject             subject
+  --> ParticipantStudent  student
+  o Integer               amount
 }
  
-event AddedStudent {
-  --> ParticipantAbstract someParticipent
-  o String studentId
-  o String detail
+event MarksTransfered {
+  --> ParticipantStudent student
+  --> Subject            subject
+  o Integer              amount
 } 
+
+event subjectAttended {
+  --> ParticipantAbstract someParticipent
+  --> Subject             subject
+  o   DateTime            spentOn
+  o   Long                duration
+}
