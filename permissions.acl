@@ -15,8 +15,6 @@
 /**
  * Sample access control list.
  */
-
-
 rule EverybodyCanReadEverything {
     description: "Allow all participants read access to all resources"
     participant: "ba_academy.models.participants.ParticipantAbstract"
@@ -68,15 +66,6 @@ rule NetworkAdminRead {
     description: "Grant business network administrators full access to user resources"
     participant: "org.hyperledger.composer.system.NetworkAdmin"
     operation: READ
-    resource: "ba_academy.**"
-    action: ALLOW
-}
-
-
-rule OnlyManagerCanCreateParticipant {
-    description: "Grant business network Manager  access to create Participant "
-    participant: "ba_academy.models.participants.ParticipantAbstract"
-    operation: ALL
     resource: "ba_academy.**"
     action: ALLOW
 }
