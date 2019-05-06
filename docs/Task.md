@@ -4,7 +4,7 @@
 #### Description: 
 
 Create a decentralized educational system. DLT 
-The main goal of DAPP is to increase the student's influence on the final result of education . 
+The main goal of this dApp is to increase the student's influence on the final result of education and track attendance and marks on blockchain. 
 Students can use their marks:
 - To fill up the subject on which they do not have enough marks;
 - Exchange/trade marks with each other students;
@@ -20,7 +20,7 @@ Students can use their marks:
     
 #### Roles:     
   
- - SysAdmin 
+ - SystemAdmininstrator
     - deploy APP
     - peerAdmin
     - network admin
@@ -37,19 +37,22 @@ Students can use their marks:
  - Student
 
 #### Models: 
- - Subject
+ - Subject {
+        studence[]
+        teacher
+   }
  - SubjectCodes{
-    name
-    description 
-    }
- - Students [
+        name
+        description 
+   }
+ - Students {
      subjects[]
      marks[]  
-     attendant[]
-    ]
+     attendance[]
+   }
  - Teachers{
     subjects[]
-    }
+   }
     		
 #### Methods: 
 
@@ -57,7 +60,8 @@ Students can use their marks:
 - Validation of issue marks 
 - Sending marks
 - Creating Subject
-- Adding Participant (with empty data)    
+- Adding Participant (with empty data)  
+- Track attendance
     		
     
 #### Query:    
