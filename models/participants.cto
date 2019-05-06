@@ -1,19 +1,19 @@
 namespace ba_academy.models.participants
 
 abstract participant ParticipantAbstract identified by id {
-  o String id
+  o String           id
   o ParticipantsInfo info
 }
-
+// Mark: ParticipantInfo
 concept ParticipantsInfo {
   o String firstName
   o String midlName
   o String lastName
   o String email
 }
-
+// Mark: SystemAdmininstrator
 participant SysAdmin extends ParticipantAbstract {
-
+  
 }
 
 participant Manager extends ParticipantAbstract {
@@ -25,12 +25,7 @@ participant Teacher extends ParticipantAbstract {
 }
 
 participant Student extends ParticipantAbstract {
-  o String[] subjects
-  o Integer[] marks
-  o String[] attendens
-}
-
-participant ParticipantTask identified by id {
-  o String id
-  --> ParticipantAbstract someParticipant
+  o String[]   subjects
+  o String[]   attendens
+  o Integer[]  marks
 }
