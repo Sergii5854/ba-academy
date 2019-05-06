@@ -2,22 +2,16 @@ namespace ba_academy.models.assets
 
 import ba_academy.models.participants.ParticipantAbstract
 
-asset Task identified by id {
-  o String id
-  o String description
-  o String comment
-  o DateTime timeStart
-  o Integer minutes
-}
-
+// 
 asset AssetTimeEntry identified by timeEntryId {
   o String timeEntryId
   o DateTime spentOn
   o Long duration
-  o String comment
-  --> ParticipantAbstract someParticipent
+  --> Subject subject
+  --> ParticipantAbstract participant
 }
 
+// Switch to Asset, so we can define codes and update them
 enum SubjectCodes { 
   o LITERATURE 
   o MATH
