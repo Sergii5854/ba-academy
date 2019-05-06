@@ -26,6 +26,6 @@ participant Teacher extends ParticipantAbstract {
 
 participant Student extends ParticipantAbstract {
   o String[]   subjects
-  o String[]   attendant
+  o String[]   attendance
   o Integer[]  marks
 }
