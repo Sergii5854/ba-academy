@@ -4,13 +4,13 @@ key words:
     
     Hyperledger, Composer, composer-rest-server,  Fabric, JavaScript, Blockchain, IBM. 
 
-## Menu :
+## Navigation Menu :
 
   [Task](docs/Task.md)
   
-  [Upgrade network](docs/howToUpgradeNetwork.md)
-  
   [Helper Scripts](docs/runScripts.md)
+  
+  [Upgrade network](docs/howToUpgradeNetwork.md)
   
   [Vocabulary](docs/Vocabulary.md) 
  
