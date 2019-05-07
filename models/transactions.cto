@@ -1,6 +1,6 @@
 namespace ba_academy.models.transactions
 
-import ba_academy.models.participants.ParticipantAbstract
+import ba_academy.models.participants.*
 import ba_academy.models.assets.*
 
 transaction TransactionTrackAttendance {
@@ -14,44 +14,50 @@ transaction TransactionTrackAttendance {
 
 transaction AddSubject {
   o String                name
-  o SubjectCodes          code
+  o String                code
   o String                detail
-  --> Teacher  teacher
+  --> Teacher            teacher
   o String[]              studentIds
 }
 
 transaction UpdateSubject {
 --> Subject              subject
   o String               name
-  o SubjectCodes         code
+  o String               code
   o String               detail
-  --> Teacher teacher
+  --> Teacher            teacher
   o String[]             studentIds
 }
 
+// add to logic event MarksTransfered
 transaction TransferMarks {
-  --> Student student
+  --> Student            student
   --> Subject            subject
   o Integer              amount
 }
 
-transaction MintMarks {
+// add to logic event MarksMinted
+transaction MintMarks { 
   --> Subject             subject
-  --> Student  student
+  --> Student             student
   o Integer               amount
 }
 
-//EVENTS
+//EVENTS 
+//+ 
 event MarksMinted {
   --> Subject             subject
-  --> Student  student
+  --> Student             student
   o Integer               amount
 }
 
+//+
 event MarksTransfered {
-  --> Student student
+  --> Student            studentRecipient
+  --> Student            studentSender
   --> Subject            subject
   o Integer              amount
+
 }
 
 event subjectAttended {

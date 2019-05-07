@@ -1,6 +1,7 @@
 namespace ba_academy.models.assets
 
-import ba_academy.models.participants.ParticipantAbstract
+import ba_academy.models.participants.*
+
 
 // 
 asset AssetTimeEntry identified by timeEntryId {
@@ -11,12 +12,21 @@ asset AssetTimeEntry identified by timeEntryId {
   --> ParticipantAbstract participant
 }
 
-// Switch to Asset, so we can define codes and update them
-enum SubjectCodes { 
-  o LITERATURE 
-  o MATH
-  o PHYSICS
-  o ENG 
-  o BLOCKCHAIN 
-  o STATISTICS
+asset Subject identified by code {
+  o String code 
+  o String name 
+  -->Teacher teacher 
+  o String[] studentIds
 }
+
+
+// Switch to Asset, so we can define codes and update them
+// enum SubjectTypes { 
+//   o LITERATURE 
+//   o MATH
+//   o PHYSICS
+//   o ENG 
+//   o BLOCKCHAIN 
+//   o STATISTICS
+// }
+

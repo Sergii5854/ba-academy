@@ -80,3 +80,13 @@ rule OnlyManagerCanCreateParticipant {
     resource: "ba_academy.models.participants.ParticipantAbstract"
     action: ALLOW
 }
+
+rule OnlyTeacherCanMintMarks {
+    description: "Grant business network Teacher  access to mint Marks "
+    participant (p): "ba_academy.models.participants.Teacher"
+    operation: CREATE
+    resource (r): "ba_academy.models.transactions.MintMarks"
+    condition: ( p.subjects.contains(r.subjects)  )
+    action: ALLOW
+
+}
