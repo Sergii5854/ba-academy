@@ -13,6 +13,8 @@ key words:
   [Upgrade network](docs/howToUpgradeNetwork.md)
   
   [Vocabulary](docs/Vocabulary.md) 
+  
+  [Resources](docs/Resources.md) 
  
 
 
