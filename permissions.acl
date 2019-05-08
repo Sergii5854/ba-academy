@@ -72,11 +72,57 @@ rule NetworkAdminRead {
     action: ALLOW
 }
 
-
-rule OnlyManagerCanCreateParticipant {
-    description: "Grant business network Manager  access to create Participant "
-    participant: "ba_academy.models.participants.ParticipantAbstract"
-    operation: ALL
-    resource: "ba_academy.**"
+rule OnlySystemAdmininstratorCanCreateManager{
+    description: "Grant business network SystemAdmininstrator  access to Create Manager"
+    participant: "ba_academy.models.participants.SystemAdmininstrator"
+    operation: CREATE
+    resource: "ba_academy.models.participants.Manager"
     action: ALLOW
 }
+
+rule OnlyManagerCanCreateTeacher {
+    description: "Grant business network Manager  access to create Teacher "
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.participants.Teacher"
+    action: ALLOW
+}
+rule OnlyManagerCanCreateStudent{
+    description: "Grant business network Manager  access to create Student "
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.participants.Student"
+    action: ALLOW
+}
+
+rule OnlyTeacherCanMintMarks {
+    description: "Grant business network Teacher  access to mint Marks "
+    participant (p): "ba_academy.models.participants.Teacher"
+    operation: CREATE
+    resource (r): "ba_academy.models.transactions.MintMarks"
+    condition: ( p.subjects.contains(r.subjects)  )
+    action: ALLOW
+
+}
+
+rule OnlyManagarCanCreateSubject{
+    description: "Grant business network Manager  access to Create Subject"
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.assets.Subject"
+    transaction: "ba_academy.models.transactions.CreateSubject"
+    action: ALLOW
+
+}
+
+rule OnlyManagarCanUpdateSubject{
+    description: "Grant business network Manager  access to Update Subject"
+    participant: "ba_academy.models.participants.Manager"
+    operation: UPDATE
+    resource: "ba_academy.models.assets.Subject"
+    transaction: "ba_academy.models.transactions.UpdateSubject"
+    action: ALLOW
+
+}
+
+

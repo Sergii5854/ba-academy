@@ -1,6 +1,6 @@
 namespace ba_academy.models.transactions
 
-import ba_academy.models.participants.ParticipantAbstract
+import ba_academy.models.participants.*
 import ba_academy.models.assets.*
 
 transaction TransactionTrackAttendance {
@@ -12,47 +12,64 @@ transaction TransactionTrackAttendance {
 
 // Manager is free to add participants with any fields now
 
-transaction AddSubject {
+transaction CreateSubject {
   o String                name
-  o SubjectCodes          code
+  o String                code
   o String                detail
-  --> ParticipantTeacher  teacher 
+  --> Teacher             teacher
   o String[]              studentIds
 }
-
+// closed by acl  
 transaction UpdateSubject {
---> Subject              subject
+  --> Subject              subject
   o String               name
-  o SubjectCodes         code
+  o String               code
   o String               detail
-  --> ParticipantTeacher teacher
+  --> Teacher            teacher
   o String[]             studentIds
 }
 
+// add to logic event MarksTransfered
 transaction TransferMarks {
-  --> ParticipantStudent student
+  --> Student            student
   --> Subject            subject
   o Integer              amount
 }
 
-transaction MintMarks {
+// add to logic event MarksMinted
+transaction MintMarks { 
   --> Subject             subject
-  --> ParticipantStudent  student
+  --> Student             student
   o Integer               amount
 }
 
-//EVENTS
+//EVENTS 
+//+ 
 event MarksMinted {
   --> Subject             subject
-  --> ParticipantStudent  student
+  --> Student             student
   o Integer               amount
 }
- 
-event MarksTransfered {
-  --> ParticipantStudent student
+
+//+
+event MarksTransfered { 
+  --> Student            studentRecipient
+  --> Student            studentSender
   --> Subject            subject
   o Integer              amount
-} 
+
+}
+
+// closed by acl 
+event SubjectUpdated { 
+  --> Subject              subject
+  o String               name
+  o String               code
+  o String               detail
+  --> Teacher            teacher
+  o String[]             studentIds
+
+}
 
 event subjectAttended {
   --> ParticipantAbstract someParticipent

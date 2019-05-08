@@ -1,8 +1,9 @@
 namespace ba_academy.models.participants
 
+
 abstract participant ParticipantAbstract identified by id {
   o String           id
-  o ParticipantsInfo info
+  o ParticipantInfo info
 }
 
 concept ParticipantInfo {
@@ -25,7 +26,7 @@ participant Teacher extends ParticipantAbstract {
 }
 
 participant Student extends ParticipantAbstract {
-  o String[]   subjects
-  o String[]   attendance
+  o String[]   subjectIds
+  o Double[]   attendanceIds
   o Integer[]  marks
 }
