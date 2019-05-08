@@ -105,6 +105,15 @@ rule OnlyTeacherCanMintMarks {
 
 }
 
+rule OnlyManagarCanCreateSubject{
+    description: "Grant business network Manager  access to Create Subject"
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.assets.Subject"
+    transaction: "ba_academy.models.transactions.CreateSubject"
+    action: ALLOW
+
+}
 
 rule OnlyManagarCanUpdateSubject{
     description: "Grant business network Manager  access to Update Subject"
