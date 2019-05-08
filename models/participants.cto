@@ -1,5 +1,6 @@
 namespace ba_academy.models.participants
 
+
 abstract participant ParticipantAbstract identified by id {
   o String           id
   o ParticipantInfo info

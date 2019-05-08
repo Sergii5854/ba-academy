@@ -72,12 +72,26 @@ rule NetworkAdminRead {
     action: ALLOW
 }
 
+rule OnlySystemAdmininstratorCanCreateManager{
+    description: "Grant business network SystemAdmininstrator  access to Create Manager"
+    participant: "ba_academy.models.participants.SystemAdmininstrator"
+    operation: CREATE
+    resource: "ba_academy.models.participants.Manager"
+    action: ALLOW
+}
 
-rule OnlyManagerCanCreateParticipant {
-    description: "Grant business network Manager  access to create Participant "
+rule OnlyManagerCanCreateTeacher {
+    description: "Grant business network Manager  access to create Teacher "
     participant: "ba_academy.models.participants.Manager"
     operation: CREATE
-    resource: "ba_academy.models.participants.ParticipantAbstract"
+    resource: "ba_academy.models.participants.Teacher"
+    action: ALLOW
+}
+rule OnlyManagerCanCreateStudent{
+    description: "Grant business network Manager  access to create Student "
+    participant: "ba_academy.models.participants.Manager"
+    operation: CREATE
+    resource: "ba_academy.models.participants.Student"
     action: ALLOW
 }
 
@@ -90,3 +104,16 @@ rule OnlyTeacherCanMintMarks {
     action: ALLOW
 
 }
+
+
+rule OnlyManagarCanUpdateSubject{
+    description: "Grant business network Manager  access to Update Subject"
+    participant: "ba_academy.models.participants.Manager"
+    operation: UPDATE
+    resource: "ba_academy.models.assets.Subject"
+    transaction: "ba_academy.models.transactions.UpdateSubject"
+    action: ALLOW
+
+}
+
+

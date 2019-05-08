@@ -12,16 +12,16 @@ transaction TransactionTrackAttendance {
 
 // Manager is free to add participants with any fields now
 
-transaction AddSubject {
+transaction CreateSubject {
   o String                name
   o String                code
   o String                detail
-  --> Teacher            teacher
+  --> Teacher             teacher
   o String[]              studentIds
 }
-
+// closed by acl  
 transaction UpdateSubject {
---> Subject              subject
+  --> Subject              subject
   o String               name
   o String               code
   o String               detail
@@ -52,11 +52,22 @@ event MarksMinted {
 }
 
 //+
-event MarksTransfered {
+event MarksTransfered { 
   --> Student            studentRecipient
   --> Student            studentSender
   --> Subject            subject
   o Integer              amount
+
+}
+
+// closed by acl 
+event SubjectUpdated { 
+  --> Subject              subject
+  o String               name
+  o String               code
+  o String               detail
+  --> Teacher            teacher
+  o String[]             studentIds
 
 }
 
