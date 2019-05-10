@@ -1,5 +1,7 @@
 namespace ba_academy.models.participants
 
+import ba_academy.models.transactions.*
+import ba_academy.models.assets.*
 
 abstract participant ParticipantAbstract identified by id {
   o String           id

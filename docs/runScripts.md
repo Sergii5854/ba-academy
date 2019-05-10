@@ -5,17 +5,17 @@
 steps to start network and application
 
  install prereqs, composer, fabric etc.
- Assuming to use HLFV12 with composer v0.20.5+
-
+ Assuming to use HLFV12 with composer v0.20.5+ 
+ 
  ### run fabric scripts from User root:
 
-    ./fabric-dev-servers/startFabric.sh
+    ~/fabric-dev-servers/startFabric.sh
 
-    ./fabric-dev-servers/createPeerAdminCard.sh
+    ~/fabric-dev-servers/createPeerAdminCard.sh
 
 ### run composer scripts from project root:
  run commands: in bna folder 
-    bna folder - is project folder (ba_academy) 
+    bna folder - is project folder ( ba_academy ) 
 
     mkdir ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/ba_academy@0.0.1.bna
 

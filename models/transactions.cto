@@ -71,9 +71,3 @@ event SubjectUpdated {
 
 }
 
-event subjectAttended {
-  --> ParticipantAbstract someParticipent
-  --> Subject             subject
-  o   DateTime            spentOn
-  o   Long                duration
-}

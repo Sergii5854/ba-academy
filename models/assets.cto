@@ -2,8 +2,6 @@ namespace ba_academy.models.assets
 
 import ba_academy.models.participants.*
 
-
-// 
 asset AssetTimeEntry identified by timeEntryId {
   o String timeEntryId
   o DateTime spentOn
