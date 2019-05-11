@@ -33,7 +33,6 @@ steps to start network and application
 
     composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Manager","id":"ManagerUsers","info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Jon","midlName":"Oleksandrovich","lastName":"Smith","email":"manager@ba.academy"}}'
 
-
     composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Teacher","id":"Teacher1", "subjects":"English" ,"info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Sergii","midlName":"Ivanovuch","lastName":"Test","email":"teacher@ba.academy"}}'
 
     composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Student","id":"Student1", "subjectIds":"1","attendanceIds":1.2,"marks":3,"info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Anton","midlName":"Maksimovich","lastName":"Testenko","email":"student@ba.academy"}}'
@@ -55,7 +54,7 @@ steps to start network and application
     composer card import --file Teacher1@ba_academy.card
     composer card import --file Student1@ba_academy.card
 
-### Start rest server from Identity (user) 
+### Start rest server from Identity (user)
 !Important note: before start stop your previus  composer-rest-server !
 
     composer-rest-server -c SystemAdmininstratorUsers@ba_academy -a false
@@ -72,7 +71,7 @@ then select POST /ba_academy.models.assets.AssetTimeEntry
 
 insert in data valid json: (change id )
 
-### Playground
+### Or start Playground 
 Start playground: 
 
     composer-playground
