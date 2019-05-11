@@ -5,7 +5,7 @@ extends: 'eslint:recommended'
 parserOptions:
     ecmaVersion: 8
     sourceType:
-        - module
+        module
         
 globals:
     getFactory: true
@@ -31,7 +31,7 @@ rules:
     no-unused-vars:
         - 0
         - args: none
-    no-console: off
+    no-console: 0
     curly: error
     eqeqeq: error
     no-throw-literal: error
@@ -51,6 +51,3 @@ rules:
     yoda: error
     no-confusing-arrow: 2
     no-constant-condition: 2
-
-
-        

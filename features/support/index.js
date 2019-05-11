@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-'use strict';
+// 'use strict';
 
 const composerSteps = require('composer-cucumber-steps');
 const cucumber = require('cucumber');
