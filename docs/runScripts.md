@@ -27,28 +27,41 @@ steps to start network and application
 
     composer-rest-server -c admin@ba_academy -a false
 
-### Create Participant instance
+### Create Participants instance
 
-    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Manager","id":"ManagerUsers","info":{"$class":"ba_academy.models.participants.EmployeeInfo","firstName":"Jon","lastName":"Smith"}}'
+    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.SystemAdmininstrator","id":"SysAdmin","info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Max","midlName":"Anatolievich","lastName":"Smith","email":"sysAdmin@ba.academy"}}'
 
-    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Teacher","id":"Teacher1","info":{"$class":"ba_academy.models.participants.EmployeeInfo","firstName":"Sergii","lastName":"Test"}}'
+    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Manager","id":"ManagerUsers","info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Jon","midlName":"Oleksandrovich","lastName":"Smith","email":"manager@ba.academy"}}'
+
+
+    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Teacher","id":"Teacher1", "subjects":"English" ,"info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Sergii","midlName":"Ivanovuch","lastName":"Test","email":"teacher@ba.academy"}}'
+
+    composer participant add -c admin@ba_academy -d '{"$class":"ba_academy.models.participants.Student","id":"Student1", "subjectIds":"1","attendanceIds":1.2,"marks":3,"info":{"$class":"ba_academy.models.participants.ParticipantInfo","firstName":"Anton","midlName":"Maksimovich","lastName":"Testenko","email":"student@ba.academy"}}'
 
 ### Identity. For instance participent create indentity card 
 
-    composer identity issue -u ManagerUsers -a ba_academy.models.participants.Manager#ManagerUsers -c admin@ba_academy -x          
+    composer identity issue -u SystemAdmininstratorUsers -a ba_academy.models.participants.SystemAdmininstrator#SysAdmin -c admin@ba_academy -x     
 
-    composer identity issue -u Teacher1 -a ba_academy.models.participants.Teacher#Teacher1 -c admin@ba_academy
+    composer identity issue -u ManagerUsers -a ba_academy.models.participants.Manager#ManagerUsers -c admin@ba_academy -x  
+
+    composer identity issue -u Teacher1 -a ba_academy.models.participants.Teacher#Teacher1 -c admin@ba_academy -x
+
+    composer identity issue -u Student1 -a ba_academy.models.participants.Student#Student1 -c admin@ba_academy
 
 
 ### Import card to network
+    composer card import --file SystemAdmininstratorUsers@ba_academy.card
     composer card import --file ManagerUsers@ba_academy.card
     composer card import --file Teacher1@ba_academy.card
+    composer card import --file Student1@ba_academy.card
 
 ### Start rest server from Identity (user) 
-before start stop your previus  composer-rest-server !important
+!Important note: before start stop your previus  composer-rest-server !
 
+    composer-rest-server -c SystemAdmininstratorUsers@ba_academy -a false
     composer-rest-server -c ManagerUsers@ba_academy -a false
     composer-rest-server -c Teacher1@ba_academy -a false
+    composer-rest-server -c Student1@ba_academy -a false
 
 ### Create time entry  rest-server
 open brouser http://localhost:3000/explorer 
@@ -59,6 +72,9 @@ then select POST /ba_academy.models.assets.AssetTimeEntry
 
 insert in data valid json: (change id )
 
+### Playground
+Start playground: 
 
+    composer-playground
 
 ###  Create bash scripts for all this staff :) 

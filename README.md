@@ -2,7 +2,7 @@
 
 key words:
     
-    Hyperledger, Composer, composer-rest-server,  Fabric, JavaScript, Blockchain, IBM. 
+    Hyperledger, Composer, composer-rest-server, Fabric, JavaScript, Blockchain, IBM. 
 
 ## Navigation Menu :
 
@@ -15,7 +15,8 @@ key words:
   [Vocabulary](docs/Vocabulary.md) 
   
   [Resources](docs/Resources.md) 
+  
+  [Errors](docs/Errors.md) 
  
 
-
-
+ 

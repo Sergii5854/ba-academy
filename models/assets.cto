@@ -17,7 +17,6 @@ asset Subject identified by code {
   o String[] studentIds
 }
 
-
 // Switch to Asset, so we can define codes and update them
 // enum SubjectTypes { 
 //   o LITERATURE 
@@ -27,4 +26,3 @@ asset Subject identified by code {
 //   o BLOCKCHAIN 
 //   o STATISTICS
 // }
-
