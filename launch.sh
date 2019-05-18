@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e # Exit immediately if a command exits with a non-zero status.
 
 export COMPOSER_PROVIDERS='{
   "github": {
@@ -25,6 +25,10 @@ composer network install -a ./dist/ba_academy@0.0.1.bna -c PeerAdmin@hlfv1
 echo 'Starting network...'
 composer network start --networkName ba_academy --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file token-admin.card
 
-# composer card import --file token-admin.card
+# do not exit if command fails
+set +e
+composer card import --file token-admin.card
+set -e
+
 echo 'Starting REST server...'
 composer-rest-server -c admin@ba_academy -a true
