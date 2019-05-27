@@ -76,4 +76,7 @@ Start playground:
 
     composer-playground
 
-###  Create bash scripts for all this staff :) 
+###  For login 
+
+    http://localhost:3000/auth/github/
+

@@ -8,7 +8,7 @@ key words:
 
   [Task](docs/Task.md)
   
-  [Helper Scripts](docs/runScripts.md)
+  [Helper Scripts](docs/helpScripts.md)
   
   [Upgrade network](docs/howToUpgradeNetwork.md)
   
@@ -21,4 +21,3 @@ key words:
   [ToDo List](docs/ToDo.md) 
  
 
- 

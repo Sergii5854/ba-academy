@@ -21,7 +21,7 @@ transaction CreateSubject {
 }
 // closed by acl  
 transaction UpdateSubject {
-  --> Subject              subject
+  --> Subject            subject
   o String               name
   o String               code
   o String               detail
