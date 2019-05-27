@@ -1,0 +1,53 @@
+{
+  "name": "AssetTimeEntry",
+  "description": "An asset named AssetTimeEntry",
+  "plural": "AssetTimeEntry",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "asset",
+      "namespace": "ba_academy.models.assets",
+      "name": "AssetTimeEntry",
+      "fqn": "ba_academy.models.assets.AssetTimeEntry",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.assets.AssetTimeEntry",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "timeEntryId": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": true
+    },
+    "spentOn": {
+      "type": "date",
+      "required": true
+    },
+    "duration": {
+      "type": "number",
+      "required": true
+    },
+    "subject": {
+      "type": "any",
+      "description": "The identifier of an instance of subject",
+      "required": true
+    },
+    "participant": {
+      "type": "any",
+      "description": "The identifier of an instance of participant",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

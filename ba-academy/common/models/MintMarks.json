@@ -1,0 +1,55 @@
+{
+  "name": "MintMarks",
+  "description": "A transaction named MintMarks",
+  "plural": "MintMarks",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "transaction",
+      "namespace": "ba_academy.models.transactions",
+      "name": "MintMarks",
+      "fqn": "ba_academy.models.transactions.MintMarks",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.transactions.MintMarks",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "subject": {
+      "type": "any",
+      "description": "The identifier of an instance of subject",
+      "required": true
+    },
+    "student": {
+      "type": "any",
+      "description": "The identifier of an instance of student",
+      "required": true
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "transactionId": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": false,
+      "generated": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": [],
+  "forceId": true
+}

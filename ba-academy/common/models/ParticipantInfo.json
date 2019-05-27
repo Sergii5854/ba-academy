@@ -1,0 +1,44 @@
+{
+  "name": "ParticipantInfo",
+  "description": "A concept named ParticipantInfo",
+  "plural": "ParticipantInfo",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "concept",
+      "namespace": "ba_academy.models.participants",
+      "name": "ParticipantInfo",
+      "fqn": "ba_academy.models.participants.ParticipantInfo",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.participants.ParticipantInfo",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "midlName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

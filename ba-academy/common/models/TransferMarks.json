@@ -1,0 +1,55 @@
+{
+  "name": "TransferMarks",
+  "description": "A transaction named TransferMarks",
+  "plural": "TransferMarks",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "transaction",
+      "namespace": "ba_academy.models.transactions",
+      "name": "TransferMarks",
+      "fqn": "ba_academy.models.transactions.TransferMarks",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.transactions.TransferMarks",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "student": {
+      "type": "any",
+      "description": "The identifier of an instance of student",
+      "required": true
+    },
+    "subject": {
+      "type": "any",
+      "description": "The identifier of an instance of subject",
+      "required": true
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "transactionId": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": false,
+      "generated": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": [],
+  "forceId": true
+}

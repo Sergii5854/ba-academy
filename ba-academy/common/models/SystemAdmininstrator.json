@@ -1,0 +1,39 @@
+{
+  "name": "SystemAdmininstrator",
+  "description": "A participant named SystemAdmininstrator",
+  "plural": "SystemAdmininstrator",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "participant",
+      "namespace": "ba_academy.models.participants",
+      "name": "SystemAdmininstrator",
+      "fqn": "ba_academy.models.participants.SystemAdmininstrator",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.participants.SystemAdmininstrator",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": true
+    },
+    "info": {
+      "type": "ParticipantInfo",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

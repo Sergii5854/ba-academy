@@ -1,0 +1,46 @@
+{
+  "name": "Teacher",
+  "description": "A participant named Teacher",
+  "plural": "Teacher",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "participant",
+      "namespace": "ba_academy.models.participants",
+      "name": "Teacher",
+      "fqn": "ba_academy.models.participants.Teacher",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.participants.Teacher",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "subjects": {
+      "type": [
+        "string"
+      ],
+      "default": [],
+      "required": false
+    },
+    "id": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": true
+    },
+    "info": {
+      "type": "ParticipantInfo",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

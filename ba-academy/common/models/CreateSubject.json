@@ -1,0 +1,65 @@
+{
+  "name": "CreateSubject",
+  "description": "A transaction named CreateSubject",
+  "plural": "CreateSubject",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true,
+    "composer": {
+      "type": "transaction",
+      "namespace": "ba_academy.models.transactions",
+      "name": "CreateSubject",
+      "fqn": "ba_academy.models.transactions.CreateSubject",
+      "abstract": false
+    }
+  },
+  "properties": {
+    "$class": {
+      "type": "string",
+      "default": "ba_academy.models.transactions.CreateSubject",
+      "required": false,
+      "description": "The class identifier for this type"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    },
+    "detail": {
+      "type": "string",
+      "required": true
+    },
+    "teacher": {
+      "type": "any",
+      "description": "The identifier of an instance of teacher",
+      "required": true
+    },
+    "studentIds": {
+      "type": [
+        "string"
+      ],
+      "default": [],
+      "required": false
+    },
+    "transactionId": {
+      "type": "string",
+      "id": true,
+      "description": "The instance identifier for this type",
+      "required": false,
+      "generated": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": [],
+  "forceId": true
+}
