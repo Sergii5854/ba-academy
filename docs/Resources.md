@@ -11,3 +11,9 @@
 
 
 [Git Repo vcoolish -> ba timetracker ](https://github.com/vcoolish/ba-permissioned-token/tree/master/ba_timetracker) 
+
+
+[Enabling multiple user mode for the REST server](https://hyperledger.github.io/composer/latest/integrating/enabling-multiuser.html) 
+
+[Code Example Server](https://github.com/acloudfan/HLF-Fabric-API) 
+ 

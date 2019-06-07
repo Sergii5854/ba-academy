@@ -4,7 +4,7 @@ set -e # Exit immediately if a command exits with a non-zero status.
 export COMPOSER_CARD=admin@ba_academy
 export COMPOSER_NAMESPACES=never
 export COMPOSER_AUTHENTICATION=true
-export COMPOSER_MULTIUSER=true
+export COMPOSER_MULTIUSER=false
 
 export COMPOSER_PROVIDERS='{
   "github": {
@@ -14,17 +14,6 @@ export COMPOSER_PROVIDERS='{
     "clientSecret": "5f9e563af5f568f27aa10b95f6aa4ad5bae86803",
     "authPath": "/auth/github",
     "callbackURL": "/auth/github/callback",
-    "successRedirect": "/",
-    "failureRedirect": "/"
-  },
-  "google": {
-    "provider": "google",
-    "module": "passport-google-oauth2",
-    "clientID": "936963877811-66tba9cubos3pclvm1l5k18mubspfive.apps.googleusercontent.com",
-    "clientSecret": "Vv2bY6kjAfc4yILLnwC5PLvq",
-    "authPath": "/auth/google",
-    "callbackURL": "/auth/google/callback",
-    "scope": "https://www.googleapis.com/auth/plus.login",
     "successRedirect": "/",
     "failureRedirect": "/"
   }
