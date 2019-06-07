@@ -47,6 +47,6 @@ composer card import --file token-admin.card
 set -e
 
 echo 'Starting REST server with custom UI...'
-cd ba-academy/ && npm start
+# cd ba-academy/ && npm start
 
-# composer-rest-server -c admin@ba_academy -a true
+composer-rest-server
