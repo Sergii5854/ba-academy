@@ -4,7 +4,7 @@ set -e # Exit immediately if a command exits with a non-zero status.
 export COMPOSER_CARD=admin@ba_academy
 export COMPOSER_NAMESPACES=never
 export COMPOSER_AUTHENTICATION=true
-export COMPOSER_MULTIUSER=false
+export COMPOSER_MULTIUSER=true
 
 export COMPOSER_PROVIDERS='{
   "github": {
